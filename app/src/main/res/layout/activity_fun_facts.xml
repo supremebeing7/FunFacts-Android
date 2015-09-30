@@ -7,7 +7,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".FunFactsActivity"
-    android:background="#ff8f09ff">
+    android:background="#ff8f09ff"
+    android:id="@+id/factScreen">
 
     <TextView
         android:text="@string/did_you_know"

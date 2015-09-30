@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Button;
 
 public class FunFactsActivity extends Activity {
+
+    private FactBook mFactBook = new FactBook();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +21,13 @@ public class FunFactsActivity extends Activity {
         // Declare View variables and assign Views from the layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
         Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        final RelativeLayout factScreen = (RelativeLayout) findViewById(R.id.factScreen);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FactBook book = new FactBook();
-                factLabel.setText(book.getFact());
-
+                factLabel.setText(mFactBook.getFact());
+                factScreen.setBackgroundColor(mFactBook.getColor());
             }
         };
         showFactButton.setOnClickListener(listener);
