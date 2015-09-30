@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
-import java.util.Random;
-
-
 public class FunFactsActivity extends Activity {
 
     @Override
@@ -25,15 +22,8 @@ public class FunFactsActivity extends Activity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Random randomGenerator = new Random();
-                int randomNumber = randomGenerator.nextInt(3);
-                String[] facts = {
-                    "The human head weighs 8 pounds",
-                    "Bees and Dogs can smell fear",
-                    "The Human Torch was denied a bank loan"
-                };
-                String fact = facts[randomNumber];
-                factLabel.setText(fact);
+                FactBook book = new FactBook();
+                factLabel.setText(book.getFact());
 
             }
         };
