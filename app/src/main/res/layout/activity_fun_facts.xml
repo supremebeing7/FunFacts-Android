@@ -6,12 +6,41 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".FunFactsActivity">
+    tools:context=".FunFactsActivity"
+    android:background="#ff8f09ff">
 
     <TextView
-        android:text="@string/hello_world"
+        android:text="@string/did_you_know"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textSize="24sp"
+        android:textColor="#80ffffff" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Another Fun Fact"
+        android:id="@+id/showFactButton"
+        android:textAlignment="center"
+        android:background="#ffffffff"
+        android:textColor="#ff000000"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/default_fact"
+        android:id="@+id/factTextView"
+        android:textSize="24sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>
