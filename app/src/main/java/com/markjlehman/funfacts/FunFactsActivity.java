@@ -4,6 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Button;
+
+import java.util.Random;
 
 
 public class FunFactsActivity extends Activity {
@@ -12,6 +17,27 @@ public class FunFactsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun_facts);
+
+        // Declare View variables and assign Views from the layout file
+        final TextView factLabel = (TextView) findViewById(R.id.factTextView);
+        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Random randomGenerator = new Random();
+                int randomNumber = randomGenerator.nextInt(3);
+                String[] facts = {
+                    "The human head weighs 8 pounds",
+                    "Bees and Dogs can smell fear",
+                    "The Human Torch was denied a bank loan"
+                };
+                String fact = facts[randomNumber];
+                factLabel.setText(fact);
+
+            }
+        };
+        showFactButton.setOnClickListener(listener);
     }
 
 
@@ -28,9 +54,6 @@ public class FunFactsActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }
